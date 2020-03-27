@@ -91,7 +91,6 @@ namespace Teste_Inicial.Controllers
         public ActionResult Delete(Categoria categoria)
         {
             categorias.Remove(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
-
             return RedirectToAction("Index");
         }
     }
