@@ -1,0 +1,37 @@
+﻿@model TesteLogin2.Models.Clientes
+
+@{
+    ViewBag.Title = "CadastroClientes";
+}
+
+<h2>CadastroClientes</h2>
+
+<div class="row">
+    <div class="col-md-6 col-md-push-3">
+        @using (Html.BeginForm("CadastroClientes", "Cliente", null, FormMethod.Post, new {Class = "form-horizontal"})){
+        <fieldset>
+            <legend>Cliente</legend>
+
+            <div>@Html.LabelFor(model => Model.IdCliente)</div>
+            <div>@Html.TextBoxFor(model => Model.IdCliente, new { @readonly = "readonly" })</div> @*o new passa uma classe do html*@
+            <!--<div>Arroba Html.HiddenFor(model => Model.IdCliente)</div> - cria um campo oculto, que não aparece na pagina-->
+            <br />
+            <div>@Html.LabelFor(model => Model.NomeCliente)</div>
+            <div>@Html.TextBoxFor(model => Model.NomeCliente)</div>
+            <br />
+            <div>@Html.LabelFor(model => Model.Email)</div>
+            <div>@Html.TextBoxFor(model => Model.Email)</div>
+            <br />
+            <div>@Html.LabelFor(model => Model.DataCadastro)</div>
+            <div>@Html.TextBoxFor(model => Model.DataCadastro)</div>
+            <br />
+            @if (Model.IdCliente > 0)
+            {
+                <input type="button" class="btn btn-danger" onclick="MensagemConfirma('Corfirmação de exclusão', 'Deseja apagar o cliente @Model.NomeCliente ?', '@Url.Action("ConfirmaApagaCliente", "Cliente", new { id = Model.IdCliente })')" value="Excluir" />
+            }
+            <input type="submit" class="btn btn-success" value="Salvar" />
+            <a href="@Url.Action("ConsultaClientes", "Cliente")" class="btn btn-default ">Cancelar</a> @*o bootstrap transforma o link em botão*@
+        </fieldset>
+        }
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model TesteLogin2.Models.Login
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="container">
+
+    @using (Html.BeginForm("ControleLogin", "Home", null, FormMethod.Post))
+    {
+        <fieldset>
+            <legend>Login</legend>
+
+            <div>@Html.LabelFor(model => Model.Usuario)</div>
+            <div>@Html.TextBoxFor(model => Model.Usuario)</div>
+
+            <div>@Html.LabelFor(model => Model.Senha)</div>
+            <div>@Html.PasswordFor(model => Model.Senha)</div>
+            <br />
+            <input type="submit" class="btn-success" value="Entrar" />
+        </fieldset>
+
+    }
+
+    
+</div>
+

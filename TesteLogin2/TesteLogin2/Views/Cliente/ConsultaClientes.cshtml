@@ -1,0 +1,45 @@
+﻿@model List<TesteLogin2.Models.Clientes>
+@*Vai usar como modelo a lista do tipo cliente (precisa do caminho completo*@
+
+@{
+    ViewBag.Title = "ConsultaClientes";
+}
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <a href="@Url.Action("CadastroClientes", "Cliente", new { IdCliente = 0 })" class="btn btn-default">Novo Cliente</a>
+
+    </div>
+</div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Consulta de Clientes</h2>
+
+                <table class="table table-condensed table-striped">
+                    <tr>
+                        <td><b>ID do cliente</b></td>
+                        <td><b>Nome</b></td>
+                        <td><b>E-mail</b></td>
+                        <td><b>Data de cadastro</b></td>
+                        <td><b>&nbsp;</b></td>
+                    </tr>
+
+                    @foreach (TesteLogin2.Models.Clientes cliente in Model) //precisa do caminho completo para o tipo
+                    {
+                        <tr>
+                            <td>@cliente.IdCliente</td>
+                            <td>@cliente.NomeCliente</td>
+                            <td>@cliente.Email</td>
+                            <td>@cliente.DataCadastro.ToString("dd'-'MM'-'yyyy")</td>
+                            <td class="text-center">
+                                <a href="@Url.Action("CadastroClientes", "Cliente", new { IdCliente = cliente.IdCliente })" class="btn btn-default btn-xs">Editar</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </table>
+            </div>
+        </div>
+
