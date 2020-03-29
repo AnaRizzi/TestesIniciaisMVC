@@ -7,7 +7,7 @@ using System.Web;
 namespace ConsultaMedicos.Models
 {
     [MetadataType(typeof(MedicoMetadado))]
-    public partial class Medico
+    public partial class Medicos
     {
     }
 
