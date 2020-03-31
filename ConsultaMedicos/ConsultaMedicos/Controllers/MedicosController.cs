@@ -66,7 +66,6 @@ namespace ConsultaMedicos.Controllers
             return View(medico);
         }
 
-        [HttpPost]
         public string Excluir(long id)
         {
             try

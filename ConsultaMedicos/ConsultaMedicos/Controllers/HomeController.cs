@@ -13,5 +13,11 @@ namespace ConsultaMedicos.Controllers
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            ViewBag.Title = "Seja bem-vindo";
+            return View();
+        }
     }
 }
