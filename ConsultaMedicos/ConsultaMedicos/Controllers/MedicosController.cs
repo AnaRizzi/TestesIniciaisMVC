@@ -8,7 +8,7 @@ using ConsultaMedicos.Models;
 
 namespace ConsultaMedicos.Controllers
 {
-    public class MedicosController : Controller
+    public class MedicosController : BaseController
     {
         private CadeMeuMedicoBDEntities db = new CadeMeuMedicoBDEntities();
 
