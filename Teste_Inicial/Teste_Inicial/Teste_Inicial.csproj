@@ -95,6 +95,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Asp_Net_MVC_DB.mdf" />
+    <Content Include="App_Data\Asp_Net_MVC_DB_log.ldf">
+      <DependentUpon>Asp_Net_MVC_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -110,7 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contexts\EFContext.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\FabricantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -126,6 +132,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Categorias\Details.cshtml" />
     <Content Include="Views\Categorias\Delete.cshtml" />
+    <Content Include="Views\Fabricantes\Index.cshtml" />
+    <Content Include="Views\Fabricantes\Create.cshtml" />
+    <Content Include="Views\Fabricantes\Edit.cshtml" />
+    <Content Include="Views\Fabricantes\Details.cshtml" />
+    <Content Include="Views\Fabricantes\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,7 +145,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
