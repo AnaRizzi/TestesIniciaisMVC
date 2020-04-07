@@ -9,5 +9,6 @@ namespace Teste_Inicial.Models
     {
         public long FabricanteId { get; set; }
         public string Nome { get; set; }
+        
     }
 }
